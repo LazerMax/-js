@@ -1,9 +1,9 @@
 export default class Character{
   constructor(name, type) {
-    this.name = name;
-    this.type = type;
+
     this.health = 100;
     this.level = 1;
+
     this.checkName(name);
     this.checkType(type);
   }
@@ -12,11 +12,15 @@ export default class Character{
     const possibleCharacters = ["Bowerman", "Swordsman", "Magician", "Daemon", "Undead", "Zombie"];
     if(!(possibleCharacters.includes(type))){
       throw new Error("Некорректный класс персонажа!");
+    }{
+      this.type = type;
     }
   }
   checkName(name){
     if(name.length < 2){
       throw new Error("Имя персонажа должно быть больше 2-х символов!");
+    }{
+      this.name = name;
     }
   }
 
